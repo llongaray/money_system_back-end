@@ -1,0 +1,98 @@
+/* ---------- VARIABLES ---------- */
+
+:root {
+    --color-bg-container: #f9f9f9; /* Fundo quase branco */
+    --color-border: #ccc;
+    --width-container: 700px;
+    --width-item: 480px;
+    --width-span: 320px;
+}
+
+/* Container para a lista de colaboradores */
+
+/* Estilos para a seção principal */
+.main-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Container para logs de transferência PIX */
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    border: 1px solid var(--color-border); /* Adiciona uma borda */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    padding: 20px; /* Adiciona espaçamento interno */
+    width: var(--width-container); /* Define a largura da caixa de logs */
+    background-color: var(--color-bg-container); /* Fundo quase branco */
+}
+
+.colaboradores-container {
+    margin-top: 20px;
+    width: var(--width-container);
+    background-color: var(--color-bg-container); /* Fundo quase branco */
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se necessário */
+}
+
+.colaboradores-container h2 {
+    margin-top: 0;
+    padding: 10px;
+    border-bottom: 1px solid var(--color-border); /* Adiciona separador abaixo do título */
+}
+
+.colaboradores-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para a lista de colaboradores */
+.colaboradores-list li {
+    height: 40px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    width: var(--width-item); /* Define um width pré-definido para cada item */
+    border-top: 1px solid var(--color-border); /* Adiciona borda superior */
+}
+
+/* Remove a borda direita do último item */
+.colaboradores-list li:last-child {
+    border-right: none;
+}
+
+/* Estilos para as informações dos colaboradores */
+.colaboradores-list li span {
+    margin: 0 10px;
+    width: var(--width-span); /* Largura máxima para cada span */
+    display: inline-block; /* Para que a largura máxima seja aplicada */
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden; /* Esconde o texto que ultrapassa a largura máxima */
+    text-overflow: ellipsis; /* Adiciona reticências para indicar texto cortado */
+    border-right: 1px solid var(--color-border);
+}
+
+/* Remove a borda direita do último span */
+.colaboradores-list li span:last-child {
+    margin-right: 0; /* Remove a margem direita do último span */
+    border-right: none; /* Remove a borda direita do último span */
+}
+
+.nome {
+    font-weight: bold;
+}
+
+.cpf {
+    color: var(--color-text);
+}
+
+.data-registro {
+    font-style: italic;
+}

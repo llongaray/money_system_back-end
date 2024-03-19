@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Financeiro - Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Link para o Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="\assets\static\styles\public\general.css">
+    <link rel="stylesheet" href="\assets\static\styles\public\menu.css">
+    <link rel="stylesheet" href="\assets\static\styles\financeiro\register_values.css">
+    <link rel="stylesheet" href="\assets\static\styles\public\lister.css">
+
+    <link rel="shortcut icon" href="\assets\media\imgs\favicon.png" type="image/x-icon">
+
+</head>
+<body>
+<div class="grid-container">
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-title">
+            <div class="sidebar-brand">
+                <span>Money System</span>
+            </div>
+        </div>
+
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+                <a href="dashboard.html">
+                    <span class="material-icons-outlined">dashboard</span> Dashboard
+                </a>
+            </li>
+            <li class="sidebar-list-item active">
+                <a href="register_colab.html">
+                    <span class="material-icons-outlined">account_circle</span> Registro Colab
+                </a>
+            </li>
+            <li class="sidebar-list-item-categoria">
+                <span class="material-icons-outlined">attach_money</span> Financeiro
+                <ul> <!-- Lista de subitens -->
+                    <li>
+                        <a href="register_values.html">
+                            <span class="material-icons-outlined">person</span> Registro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pix.html">
+                            <span class="material-icons-outlined">payment</span> PIX
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="#">
+                    <span class="material-icons-outlined">settings</span> Configurações
+                </a>
+            </li>
+        </ul>
+                  
+    </aside>
+  <!-- End Sidebar -->
+
+    <!-- Main -->
+    <main class="main-container">
+        <div class="main-title d-flex justify-content-center">
+            <p class="font-weight-bold">Registro Financeiro</p>
+        </div>
+
+        <!-- Formulário de Registro Financeiro -->
+        <form class="register-form">
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <select id="colaborador" name="colaborador" class="form-control" required>
+                        <option value="" disabled selected>Selecione o Colaborador</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    <input type="text" id="cpf" name="cpf" class="form-control" placeholder="CPF" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <input type="text" id="chave-pix" name="chave-pix" class="form-control" placeholder="Chave Pix" readonly>
+                </div>
+                <div class="form-group col-sm-6">
+                    <input type="text" id="salario" name="salario" class="form-control" placeholder="Salário (R$)" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <input type="text" id="vale-transporte" name="vale-transporte" class="form-control" placeholder="Vale-Transporte (R$)" required>
+                </div>
+                <div class="form-group col-sm-6">
+                    <!-- Outros campos podem ser adicionados conforme necessário -->
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </form>
+        <!-- Container para listar colaboradores registrados -->
+        <section class="section-container">
+            <h4>Lista de Colaboradores Registrados</h4>
+            <div class="colaboradores-container">
+                <ul id="lista-colaboradores" class="colaboradores-list" style="max-height: 200px; overflow-y: auto;">
+                    <!-- Aqui serão adicionados os colaboradores dinamicamente -->
+                </ul>
+            </div>
+        </section>
+        
+        <!-- End Container para listar colaboradores registrados -->
+    </main>
+    <!-- End Main -->
+
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+<script src="\static\scripts\script.js"></script>
+<script>
+    
+</script>
+</body>
+</html>

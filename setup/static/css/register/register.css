@@ -1,0 +1,13 @@
+/* ---------- VARIABLES ---------- */
+
+:root {
+    /* Adicione suas variáveis aqui, se necessário */
+}
+
+/* Estilos para a seção principal */
+.main-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza verticalmente */
+}

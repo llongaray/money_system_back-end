@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>PIX</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+
+    <!-- Link para o Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="\assets\static\styles\public\general.css">
+    <link rel="stylesheet" href="\assets\static\styles\public\menu.css">
+    <link rel="stylesheet" href="\assets\static\styles\public\lister.css">
+    <link rel="stylesheet" href="\assets\static\styles\financeiro\pix_payment.css">
+
+    <link rel="shortcut icon" href="\assets\media\imgs\favicon.png" type="image/x-icon">
+
+</head>
+<body>
+<div class="grid-container">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-title">
+            <div class="sidebar-brand">
+                <span>Money System</span>
+            </div>
+        </div>
+
+        <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+                <a href="dashboard.html">
+                    <span class="material-icons-outlined">dashboard</span> Dashboard
+                </a>
+            </li>
+            <li class="sidebar-list-item active">
+                <a href="register_colab.html">
+                    <span class="material-icons-outlined">account_circle</span> Registro Colab
+                </a>
+            </li>
+            <li class="sidebar-list-item-categoria">
+                <span class="material-icons-outlined">attach_money</span> Financeiro
+                <ul> <!-- Lista de subitens -->
+                    <li>
+                        <a href="register_values.html">
+                            <span class="material-icons-outlined">person</span> Registro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pix.html">
+                            <span class="material-icons-outlined">payment</span> PIX
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="#">
+                    <span class="material-icons-outlined">settings</span> Configurações
+                </a>
+            </li>
+        </ul>
+                
+    </aside>
+    <!-- End Sidebar -->
+
+    <!-- Main -->
+    <main class="main-container">
+        <div class="main-title d-flex justify-content-center">
+            <p class="font-weight-bold">PIX</p>
+        </div>
+
+        <!-- Formulário PIX -->
+        <form class="pix-form">
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <select id="colaborador" name="colaborador" class="form-control" required>
+                        <option value="" disabled selected>Selecione o Colaborador</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    <input type="text" id="cpf" name="cpf" class="form-control" placeholder="CPF" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <input type="text" id="chave-pix" name="chave-pix" class="form-control" placeholder="Chave Pix" readonly>
+                </div>
+                <div class="form-group col-sm-6">
+                    <select id="tipo-pagamento" name="tipo-pagamento" class="form-control" required>
+                        <option value="" disabled selected>Tipo de Pagamento</option>
+                        <option value="salario">Salário</option>
+                        <option value="vale-transporte">Vale-Transporte</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <input type="text" id="valor" name="valor" class="form-control" placeholder="Valor (R$)" readonly>
+                </div>
+                <div class="form-group col-sm-6">
+                    <!-- Outros campos podem ser adicionados conforme necessário -->
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary">Pagar</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Container para logs de transferência PIX -->
+        <section class="section-container">
+            <div class="box">
+                <!-- Logs de transferência PIX serão exibidos aqui -->
+            </div>
+        </section>
+        <!-- End Container para logs de transferência PIX -->
+    </main>
+    <!-- End Main -->
+
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+<script src="\static\scripts\script.js"></script>
+<script>
+    // Lista de colaboradores
+    const colaboradores = [
+        { nome: "John Doe", cpf: "123.456.789-00", setor: "Vendas", chave_pix: "123456789", salario: "R$ 5000", vale_transporte: "R$ 200" },
+        { nome: "Jane Smith", cpf: "987.654.321-00", setor: "Operacional", chave_pix: "987654321", salario: "R$ 6000", vale_transporte: "R$ 250" },
+        { nome: "Michael Johnson", cpf: "456.789.123-00", setor: "RH", chave_pix: "456789123", salario: "R$ 5500", vale_transporte: "R$ 180" },
+        { nome: "Emily Brown", cpf: "654.321.987-00", setor: "TI", chave_pix: "654321987", salario: "R$ 4800", vale_transporte: "R$ 220" },
+        { nome: "David Garcia", cpf: "789.123.456-00", setor: "Atendimento/Loja", chave_pix: "789123456", salario: "R$ 5200", vale_transporte: "R$ 190" },
+        { nome: "Ana Silva", cpf: "321.987.654-00", setor: "Vendas", chave_pix: "321987654", salario: "R$ 5800", vale_transporte: "R$ 210" }
+    ];
+
+    // Seleciona os elementos HTML relevantes
+    const selectColaborador = document.getElementById('colaborador');
+    const inputCPF = document.getElementById('cpf');
+    const inputChavePix = document.getElementById('chave-pix');
+    const selectTipoPagamento = document.getElementById('tipo-pagamento');
+    const inputValor = document.getElementById('valor');
+
+    // Preenche o select com as opções de colaboradores
+    colaboradores.forEach(function(colaborador) {
+        respostaHTML += `<option value="${colaborador.nome}">${colaborador.nome}</option>`;
+    });
+
+    // Evento de mudança no select para preencher os campos CPF e Chave PIX
+    selectColaborador.addEventListener('change', function() {
+        // Obtenha o colaborador selecionado
+        const selecionado = this.value;
+        // Encontre o colaborador na lista de colaboradores
+        const colaborador = colaboradores.find(c => c.nome === selecionado);
+        // Preencha os campos CPF e Chave PIX com os dados do colaborador
+        if (colaborador) {
+            inputCPF.value = colaborador.cpf;
+            inputChavePix.value = colaborador.chave_pix;
+        } else {
+            // Limpe os campos se nenhum colaborador for selecionado
+            inputCPF.value = '';
+            inputChavePix.value = '';
+        }
+    });
+
+    // Evento de mudança no select para preencher o campo Valor de acordo com o tipo de pagamento selecionado
+    selectTipoPagamento.addEventListener('change', function() {
+        const selecionado = this.value;
+        const colaboradorSelecionado = colaboradores.find(c => c.nome === selectColaborador.value);
+        if (colaboradorSelecionado) {
+            inputValor.value = selecionado === 'salario' ? colaboradorSelecionado.salario : colaboradorSelecionado.vale_transporte;
+        } else {
+            inputValor.value = '';
+        }
+    });
+</script>
+
+</body>
+</html>

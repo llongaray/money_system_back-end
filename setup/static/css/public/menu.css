@@ -1,0 +1,89 @@
+/* ---------- VARIABLES ---------- */
+
+:root {
+  --color-background-sidebar: #21232d;
+  --color-text-sidebar: #9799ab;
+  --color-hover-sidebar: rgba(255, 255, 255, 0.2);
+  --font-primary: "Montserrat", sans-serif;
+  --font-weight-bold: 700;
+}
+
+/* ---------- MENU ---------- */
+
+#sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  background-color: var(--color-background-sidebar);
+  color: var(--color-text-sidebar);
+  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.sidebar-title > span {
+  display: none;
+}
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+}
+.sidebar-list {
+  padding: 0;
+  margin-top: 15px;
+  list-style-type: none;
+}
+
+.sidebar-list-item {
+  padding: 20px;
+}
+
+.sidebar-list-item:hover {
+  background-color: var(--color-hover-sidebar);
+  cursor: pointer;
+}
+
+.sidebar-list-item > a {
+  text-decoration: none;
+  color: var(--color-text-sidebar);
+}
+
+
+.sidebar-list-item-categoria {
+  padding: 20px;
+}
+.sidebar-list-item-categoria ul {
+  list-style-type: none;
+  padding-top: 12px;
+}
+.sidebar-list-item-categoria ul li {
+  padding: 10px 0;
+}
+.sidebar-list-item-categoria ul li:hover {
+  background-color: var(--color-hover-sidebar);
+  cursor: pointer;
+}
+.sidebar-list-item-categoria a{
+  text-decoration: none;
+  color: var(--color-text-sidebar);
+}
+.sidebar-responsive {
+  display: inline !important;
+  position: absolute;
+  /*
+    the z-index of the ApexCharts is 11
+    we want the z-index of the sidebar higher so that
+    the charts are not showing over the sidebar 
+    on small screens
+  */
+  z-index: 12 !important;
+}

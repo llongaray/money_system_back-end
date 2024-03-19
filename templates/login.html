@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boreal system - Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="\assets\static\styles\public\general.css">
+    <link rel="stylesheet" href="\assets\static\styles\public\menu.css">
+    <link rel="stylesheet" href="\assets\static\styles\login\login.css">
+
+
+    <link rel="shortcut icon" href="\assets\media\imgs\favicon.png" type="image/x-icon">
+
+</head>
+<body>
+    <section class="container-login">
+        <form action="dashboard.html" method="POST">
+            <div class="d-flex justify-content-center overflow" style="height: 100px">
+                <img src="\assets\media\imgs\logo.png" alt="logo" style="width: 180px; object-fit: cover; margin: -20px;" class="img-fluid">
+            </div>
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div class="captcha-container" style="height: 50px;">
+                <!--<input type="text" id="captcha" name="captcha" class="captcha" placeholder="Enter captcha code" required>-->
+                <!-- Aqui você pode adicionar sua lógica para gerar o captcha -->
+                <!-- Exemplo: <img src="captcha_image.php" alt="Captcha"> -->
+            </div>
+            <input type="submit" value="Login" class="btn btn-primary">
+        </form>
+    </section>
+</body>
+</html>

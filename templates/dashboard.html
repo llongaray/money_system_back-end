@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="\assets\static\styles\public\general.css">
+    <link rel="stylesheet" href="\assets\static\styles\public\menu.css">
+    <link rel="stylesheet" href="\assets\static\styles\dashboard\dashboard.css">
+    <link rel="shortcut icon" href="\assets\media\imgs\favicon.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class="grid-container">
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span>Money System</span>
+                </div>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="dashboard.html">
+                        <span class="material-icons-outlined">dashboard</span> Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-list-item active">
+                    <a href="register_colab.html">
+                        <span class="material-icons-outlined">account_circle</span> Registro Colab
+                    </a>
+                </li>
+                <li class="sidebar-list-item-categoria">
+                    <span class="material-icons-outlined">attach_money</span> Financeiro
+                    <ul> <!-- Lista de subitens -->
+                        <li>
+                            <a href="register_values.html">
+                                <span class="material-icons-outlined">person</span> Registro
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pix.html">
+                                <span class="material-icons-outlined">payment</span> PIX
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#">
+                        <span class="material-icons-outlined">settings</span> Configurações
+                    </a>
+                </li>
+            </ul>
+                      
+        </aside>
+      <!-- End Sidebar -->
+
+
+      <!-- Main -->
+      <main class="main-container">
+        <div class="main-title">
+            <p class="font-weight-bold">DASHBOARD</p>
+        </div>
+    
+        <div class="main-cards">
+    
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">Colaboradores Registrados</p>
+                    <span class="material-icons-outlined text-blue">people</span>
+                </div>
+                <span class="text-primary font-weight-bold">249</span>
+            </div>
+    
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">Valor total Salários</p>
+                    <span class="material-icons-outlined text-orange">attach_money</span>
+                </div>
+                <span class="text-primary font-weight-bold">$15,000</span>
+            </div>
+    
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">Valor total VT</p>
+                    <span class="material-icons-outlined text-green">directions_bus</span>
+                </div>
+                <span class="text-primary font-weight-bold">$2,500</span>
+            </div>
+    
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">Usuários</p>
+                    <span class="material-icons-outlined text-red">account_circle</span>
+                </div>
+                <span class="text-primary font-weight-bold">10</span>
+            </div>
+    
+        </div>
+    </main>
+    
+      <!-- End Main -->
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="\static\scripts\script.js"></script>
+  </body>
+</html>
